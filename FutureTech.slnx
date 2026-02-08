@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FutureTech.Api/FutureTech.Api.csproj" />
+    <Project Path="src/FutureTech.Application/FutureTech.Application.csproj" />
+    <Project Path="src/FutureTech.Domain/FutureTech.Domain.csproj" />
+    <Project Path="src/FutureTech.Infrastructure/FutureTech.Infrastructure.csproj" />
+  </Folder>
+</Solution>
