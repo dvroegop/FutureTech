@@ -26,6 +26,9 @@ builder.Services.AddOpenApi(options =>
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
+// Add Scalar
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
 // Seed database in Development environment
@@ -38,11 +41,14 @@ if (app.Environment.IsDevelopment())
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
+app.MapScalarApiReference();
+app.UseSwagger();
+app.MapGet("/hello",() => "Hello, FutureTech API!");
 
 app.Run();
