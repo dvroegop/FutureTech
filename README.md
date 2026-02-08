@@ -86,7 +86,7 @@ FutureTech/
    ```
 
 5. **Access Swagger UI**
-   - Open your browser and navigate to: `https://localhost:7XXX/swagger` (port may vary)
+   - Open your browser and navigate to: `https://localhost:7108/swagger` or `http://localhost:5041/swagger`
    - Or use the URL displayed in the console output
 
 ## 📚 API Endpoints

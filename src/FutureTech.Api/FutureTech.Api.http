@@ -1,6 +1,62 @@
 @FutureTech.Api_HostAddress = http://localhost:5041
 
-GET {{FutureTech.Api_HostAddress}}/weatherforecast/
+### Get all tickets
+GET {{FutureTech.Api_HostAddress}}/api/tickets
 Accept: application/json
+
+###
+
+### Get ticket by ID
+GET {{FutureTech.Api_HostAddress}}/api/tickets/1
+Accept: application/json
+
+###
+
+### Create new ticket
+POST {{FutureTech.Api_HostAddress}}/api/tickets
+Content-Type: application/json
+
+{
+  "title": "New Ticket from HTTP file",
+  "description": "Testing API endpoints",
+  "status": 0,
+  "priority": 1
+}
+
+###
+
+### Update ticket
+PUT {{FutureTech.Api_HostAddress}}/api/tickets/1
+Content-Type: application/json
+
+{
+  "title": "Updated Ticket Title",
+  "description": "Updated description",
+  "status": 1,
+  "priority": 2
+}
+
+###
+
+### Delete ticket
+DELETE {{FutureTech.Api_HostAddress}}/api/tickets/6
+
+###
+
+### Get comments for ticket
+GET {{FutureTech.Api_HostAddress}}/api/comments/ticket/1
+Accept: application/json
+
+###
+
+### Create comment
+POST {{FutureTech.Api_HostAddress}}/api/comments
+Content-Type: application/json
+
+{
+  "ticketId": 1,
+  "content": "This is a test comment",
+  "author": "Test User"
+}
 
 ###
