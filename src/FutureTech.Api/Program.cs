@@ -1,18 +1,24 @@
 using FutureTech.Application;
 using FutureTech.Infrastructure;
 using FutureTech.Infrastructure.Data;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+builder.Services.AddOpenApi(options =>
 {
-    c.SwaggerDoc("v1", new() { 
-        Title = "FutureTech Ticket Management API", 
-        Version = "v1",
-        Description = "A Clean Architecture ASP.NET Core Web API for Ticket/Case Management"
+    options.AddDocumentTransformer((document, context, cancellationToken) =>
+    {
+        document.Info = new()
+        {
+            Title = "FutureTech Ticket Management API",
+            Version = "v1",
+            Description = "A Clean Architecture ASP.NET Core Web API for Ticket/Case Management"
+        };
+        return Task.CompletedTask;
     });
 });
 
@@ -31,11 +37,8 @@ if (app.Environment.IsDevelopment())
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "FutureTech API v1");
-    });
+    app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();

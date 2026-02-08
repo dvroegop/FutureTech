@@ -29,7 +29,7 @@ FutureTech/
 - **Entity Framework Core** - With SQLite for data persistence
 - **Auto-migrations** - Database is automatically created and seeded in Development
 - **RESTful API** - Complete CRUD operations for tickets and comments
-- **Swagger/OpenAPI** - Interactive API documentation
+- **Scalar/OpenAPI** - Interactive API documentation
 - **Validation** - FluentValidation for request validation
 - **Seed Data** - Pre-populated sample tickets and comments in Development mode
 
@@ -58,7 +58,7 @@ FutureTech/
 
 4. **Run the application**
    - Press **F5** or click the **Run** button
-   - The API will start and automatically open Swagger UI in your browser
+   - The API will start and automatically open Scalar API documentation in your browser
    - Database will be automatically created and seeded with sample data
 
 ### Option 2: Using Command Line
@@ -85,8 +85,8 @@ FutureTech/
    dotnet run
    ```
 
-5. **Access Swagger UI**
-   - Open your browser and navigate to: `https://localhost:7108/swagger` or `http://localhost:5041/swagger`
+5. **Access Scalar API Documentation**
+   - Open your browser and navigate to: `https://localhost:7108/scalar/v1` or `http://localhost:5041/scalar/v1`
    - Or use the URL displayed in the console output
 
 ## 📚 API Endpoints
@@ -151,7 +151,7 @@ The database file (`ticketmanagement.db`) will be created automatically in the A
 In Development environment, the application:
 - Automatically applies EF Core migrations
 - Seeds the database with sample data
-- Enables Swagger UI at `/swagger`
+- Enables Scalar API documentation at `/scalar/v1`
 - Provides detailed error messages
 
 ## 🧪 Sample Data
